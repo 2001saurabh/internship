@@ -5,6 +5,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
 
+    this.inputRef = React.createRef();
+
     this.state = {
       isLogedIn: false,
       name: "",
@@ -13,7 +15,8 @@ export default class Login extends Component {
     };
   }
 
-  validate = () => {
+  validate = (e) => {
+    e.preventDefault();
     if (
       this.state.name === "" ||
       this.state.username === "" ||
@@ -29,8 +32,12 @@ export default class Login extends Component {
       });
     }
   };
+  focusInput() {
+    this.inputRef.current.focus();
+  }
 
   render() {
+    const { name, username, password } = this.state;
     return this.state.isLogedIn ? (
       <div
         className="ui segment"
@@ -54,7 +61,8 @@ export default class Login extends Component {
                 type="text"
                 name="first-name"
                 placeholder="First Name"
-                value={this.state.name}
+                value={name}
+                ref={this.inputRef}
                 onChange={(e) => {
                   this.setState({ name: e.target.value });
                 }}
@@ -66,7 +74,7 @@ export default class Login extends Component {
                 type="text"
                 name="user-name"
                 placeholder="UserName"
-                value={this.state.username}
+                value={username}
                 onChange={(e) => {
                   this.setState({ username: e.target.value });
                 }}
@@ -78,13 +86,15 @@ export default class Login extends Component {
                 type="password"
                 name="first-name"
                 placeholder="Password"
-                value={this.state.password}
+                value={password}
                 onChange={(e) => {
                   this.setState({ password: e.target.value });
                 }}
               />
             </div>
-            <button className="ui blue inverted button">Submit</button>
+            <button className="ui blue inverted button" type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>

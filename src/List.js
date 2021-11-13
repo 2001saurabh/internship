@@ -1,7 +1,7 @@
 import React from "react";
 import LIstItem from "./LIstItem";
 function List() {
-  const list = ["vegetables", "fruits", "grains"];
+  //   const list = ["vegetables", "fruits", "grains"];
 
   const person = [
     {
