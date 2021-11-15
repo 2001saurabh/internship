@@ -26,7 +26,12 @@ function List() {
     },
   ];
   //   const listItem = list.map((lists) => <h2>{lists}</h2>);
+  const filterList = person.filter((e) => {
+    return e.Age === 37;
+  });
   const personsList = person.map((persons) => <LIstItem persons={persons} />);
+  console.log(personsList);
+  console.log(filterList);
   // here we pass the list items to a component which renders the jsx part named as LIstItem
   return (
     //   <div>{listItem}</div>;
