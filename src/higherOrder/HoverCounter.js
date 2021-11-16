@@ -4,7 +4,9 @@ import UpdatedComponent from "./CommonFuncHigherOrder";
 class HoverCounter extends Component {
   render() {
     const { count, incrementCount } = this.props;
-    return <h2 onMouseOver={incrementCount}>Hovered {count} times</h2>;
+    return (
+      <h2 onMouseOver={incrementCount}>Hoc demo: Hovered {count} times</h2>
+    );
   }
 }
 

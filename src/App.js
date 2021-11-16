@@ -1,7 +1,9 @@
-// import "./App.css";
-
-import ComponentC from "./context/ComponentC";
-import { UserProvider } from "./context/useContext";
+import "./App.css";
+import ComponentC from "./hooks/useContext/ComponentC";
+import React from "react";
+//for context
+// import ComponentC from "./context/ComponentC";
+// import { UserProvider } from "./context/useContext";
 
 // for higher order
 // import HoverCounter from "./higherOrder/HoverCounter";
@@ -11,11 +13,14 @@ import { UserProvider } from "./context/useContext";
 // import Counter from "./render Props/counter";
 // import ClickCounterTwo from "./render Props/ClickCounterTwo";
 // import HoverCounterTwo from "./render Props/HoverCounterTwo";
+
 //for hooks
 // import HookCounter from "./hooks/classCounter";
 // import ClassEffect from "./hooks/ClassEffect";
 // import Effect from "./hooks/Effect";
 // import ToggleDisplayEffect from "./hooks/ToggleDisplayEffect";
+
+import Datafetching from "./hooks/useEffect/funComp/Datafetching";
 
 //for lifecycle
 // import Lifecycle from "./lifecycle/Lifecycle";
@@ -39,6 +44,9 @@ import { UserProvider } from "./context/useContext";
 // import Parent from "./parent";
 // import Text from "./text";
 
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
+
 function App() {
   return (
     <div className="App">
@@ -53,9 +61,19 @@ function App() {
       {/* <HookCounter /> */}
       {/* <Lifecycle /> */}
       {/* <StateObject /> */}
+      {/* ---------------for effecthook --------------------*/}
       {/* <ClassEffect />
       <Effect />
       <ToggleDisplayEffect /> */}
+      {/* <Datafetching /> */}
+
+      {/* ---------------for contexthook --------------------*/}
+
+      <UserContext.Provider value="saurabh">
+        <ChannelContext.Provider value="Pathak">
+          <ComponentC />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
       {/* -----------------------------------*/}
       {/* <List /> */}
       {/* <Login /> */}
@@ -80,9 +98,11 @@ function App() {
       </Counter> */}
 
       {/* ---------------for context --------------------*/}
-      <UserProvider value="saurabh">
+      {/* <UserProvider value="saurabh">
         <ComponentC />
-      </UserProvider>
+      </UserProvider> */}
+      {/* --------------for default value of context --------*/}
+      {/* <ComponentC /> */}
     </div>
   );
 }
