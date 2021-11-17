@@ -1,5 +1,5 @@
 import "./App.css";
-import ComponentC from "./hooks/useContext/ComponentC";
+
 import React from "react";
 //for context
 // import ComponentC from "./context/ComponentC";
@@ -20,7 +20,10 @@ import React from "react";
 // import Effect from "./hooks/Effect";
 // import ToggleDisplayEffect from "./hooks/ToggleDisplayEffect";
 
-import Datafetching from "./hooks/useEffect/funComp/Datafetching";
+// import Datafetching from "./hooks/useEffect/funComp/Datafetching";
+// import CounterOne from "./hooks/useReducer/CounterOne";
+// import CounterTwo from "./hooks/useReducer/CounterTwo";
+import MultiCount from "./hooks/useReducer/MultiCount";
 
 //for lifecycle
 // import Lifecycle from "./lifecycle/Lifecycle";
@@ -69,12 +72,19 @@ function App() {
 
       {/* ---------------for contexthook --------------------*/}
 
-      <UserContext.Provider value="saurabh">
+      {/* <UserContext.Provider value="saurabh">
         <ChannelContext.Provider value="Pathak">
           <ComponentC />
         </ChannelContext.Provider>
-      </UserContext.Provider>
-      {/* -----------------------------------*/}
+      </UserContext.Provider> */}
+      {/* ----------------useReducer-------------------*/}
+
+      {/* <CounterOne /> */}
+      {/* <CounterTwo /> */}
+      <MultiCount />
+
+      {/* ----------------useCallback-------------------*/}
+
       {/* <List /> */}
       {/* <Login /> */}
       {/* <ParentComponent /> */}
